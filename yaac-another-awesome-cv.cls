@@ -1,6 +1,6 @@
 %% Copyright 2016 Christophe Roger
 %
-% Author:
+% Author: 
 % Christophe Roger (Darwiin)
 %
 % This work may be distributed and/or modified under the
@@ -12,12 +12,12 @@
 % version 2005/12/01 or later.
 %
 % This work has the LPPL maintenance status `maintained'.
-%
+% 
 % The Current Maintainer of this work is M. C. Roger.
 %
-% This work consists of the files awesome-source-cv.cls
+% This work consists of the files awesome-source-cv.cls 
 
-\ProvidesClass{yaac-another-awesome-cv}[2018/10/17  v1.10.2 'YAAC: Another Awesome CV' Class]
+\ProvidesClass{yaac-another-awesome-cv}[2018/07/19  v1.9.2 'YAAC: Another Awesome CV' Class]
 
 \LoadClass[a4paper]{article}
 
@@ -63,12 +63,12 @@
 \RequirePackage[usenames,dvipsnames]{xcolor}
 \RequirePackage{fullpage}
 \RequirePackage[margin=1.5cm]{geometry}
-\RequirePackage[fixed]{fontawesome5}
+\RequirePackage{fontawesome}
 \RequirePackage{hyperref}
 \RequirePackage{titlesec}
 \RequirePackage{array}
 \RequirePackage{enumitem}
-\RequirePackage{longtable}
+\RequirePackage{longtable} 	
 \RequirePackage{etoolbox}
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}
@@ -130,8 +130,8 @@
 \titlespacing{\section}{0pt}{2pt}{2pt}
 
 % Configure list
-\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em}
-\setlist[itemize,2]{label=\faAngleRight, nosep, leftmargin=1.5em}
+\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em} 
+\setlist[itemize,2]{label=\faAngleRight, nosep, leftmargin=1.5em} 
 
 % Setup Array : new column type
 \newcolumntype{R}[1]{>{\hfill}m{#1}}
@@ -148,13 +148,13 @@
 {
   %\setmainfont[BoldFont = Helvetica Neue, ItalicFont=Helvetica Neue Thin Italic ,SmallCapsFont = Helvetica Neue Light]{Helvetica Neue Thin}
   \setmainfont{Source Sans Pro Light}[
-    BoldFont = SourceSansPro-Regular,
+    BoldFont = SourceSansPro-Regular, 
     ItalicFont= Source Sans Pro Light Italic]
 }
 {
   \setmainfont{SourceSansPro-Light}[
-    Path = fonts/,
-    BoldFont = SourceSansPro-Regular,
+    Path = fonts/, 
+    BoldFont = SourceSansPro-Regular, 
     ItalicFont = SourceSansPro-LightIt]
 }
 
@@ -167,16 +167,12 @@
 
 % Font Awesome icons aliases
 \newcommand{\mailSymbol}{\faAt}
-\newcommand{\locationSymbol}{\faMapMarker*}
+\newcommand{\locationSymbol}{\faMapMarker}
 \newcommand{\infoSymbol}{\faInfo}
-\newcommand{\linkedinSymbol}{\faLinkedinIn}
+\newcommand{\linkedinSymbol}{\faLinkedin}
 \newcommand{\viadeoSymbol}{\faViadeo}
-\newcommand{\mobileSymbol}{\faMobile*}
+\newcommand{\mobileSymbol}{\faMobilePhone}
 \newcommand{\githubSymbol}{\faGithub}
-\newcommand{\mediumSymbol}{\faMedium}
-\newcommand{\bitbucketSymbol}{\faBitbucket}
-\newcommand{\websiteSymbol}{\faLink}
-
 
 \newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{Black} }
 \newcommand\important[1]{\textbf #1}
@@ -193,11 +189,11 @@
 
 % Render a text with its symbol
 % Usage; \socialtext{<icon>}{<label>}
-\newcommand{\socialtext}[2]{\mbox{\textcolor{symbolcolor}{#1}#2\hspace{0.8em}}}
+\newcommand{\socialtext}[2]{\mbox{\textcolor{symbolcolor}{#1}\hspace{0.5em}#2\hspace{1em}}}
 
 % Render a link with its symbol
 % Usage; \sociallink{<icon>}{<label>}
-\newcommand{\sociallink}[3]{\mbox{\textcolor{symbolcolor}{#1}\link{#2}{#3}\hspace{0.8em}}}
+\newcommand{\sociallink}[3]{\mbox{\textcolor{symbolcolor}{#1}\hspace{0.5em}\link{#2}{#3}\hspace{1em}}}
 
 % Define author's name
 % Usage: \name{<firstname>}{<lastname>}
@@ -232,31 +228,23 @@
 
 % Render author's viadeo(optional)
 % Usage: \viadeo{<viadeo-nick>}
-\newcommand*{\viadeo}[1]{\sociallink{\viadeoSymbol}{http://www.viadeo.com/fr/profile/#1}{viadeo.com/fr/profile/#1}}
+\newcommand*{\viadeo}[1]{\sociallink{\viadeoSymbol}{http://www.viadeo.com/fr/profile/#1}{viadeo.com/fr/profile/#1}} 
 
 % Render author's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\sociallink{\githubSymbol}{https://www.github.com/#1}{github.com/#1}}           % Github icon + URL
-
-% Render author's medium (optional)
-% Usage: \medium{<medium-nick>}
-\newcommand*{\medium}[1]{\sociallink{\mediumSymbol}{https://www.medium.com/@#1}{medium.com/#1}}
-
-% Render author's bitbucket (optional)
-% Usage: \bitbucket{<bitbucket-account-name>}
-\newcommand*{\bitbucket}[1]{\sociallink{\bitbucketSymbol}{https://bitbucket.com/#1}{bitbucket.com/#1}}
 
 % Render author's email (optional)
 % Usage: \email{<email adress>}
 \newcommand*{\email}[1]{\sociallink{\mailSymbol}{mailto:#1}{#1}}
 
 % Render a website link (optional)
-% Usage: \website{<website name>}{<website adress>}
-\newcommand*{\website}[2]{\sociallink{\websiteSymbol}{#1}{#2}}
+% Usage: \email{<email adress>}
+\newcommand*{\website}[2]{\sociallink{\faExternalLink}{#1}{#2}}
 
 % Render author's mobile phone (optional)
 % Usage: \smartphone{<mobile phone number>}
-\newcommand*\smartphone[1]{\socialtext{\mobileSymbol}{#1}}
+\newcommand*\smartphone[1]{\socialtext{\mobileSymbol}{#1}}    
 
 % Render author's tagline
 \newcommand\resumetitle[1]{
@@ -331,7 +319,7 @@
 \newenvironment{keywords}{%
   \renewcommand{\arraystretch}{1.1}
 
-  \begin{tabular}{>{}r>{}p{13cm}}
+  \begin{tabular}{>{}r>{}p{13cm}} 
 }{%
   \end{tabular}
 }
@@ -339,7 +327,7 @@
 % Render a scholarshipentry in the scolarship environment
 % Usage: \scholarshipentry{<date>}{<description>}
 \newcommand\keywordsentry[2]{
-  \textbf{#1} &   #2\\
+  \textbf{#1} &   #2\\ 
 }
 
 % Define a new column type for the scholarship environment
@@ -368,7 +356,7 @@
 % Render a skill in the skills environment
 % Usage: \skill{<skill>}{<level>}
 \newcommand\skill[2]{
-  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircle[regular]}{\faCircle}}\enspace } \\
+  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircleThin}{\faCircle}}\enspace } \\
 }
 
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
@@ -381,7 +369,7 @@
 }
 
 % Render an experience in the experiences environment
-% Usage:
+% Usage: 
 % \experience
 %  {<End date>}      {<Title>}{<Enterprise>}{<Country>}
 %  {<Start date}     {
@@ -397,7 +385,7 @@
   }
 
 % Render a consultant experience in the experiences environment
-% Usage:
+% Usage: 
 % \consultantexperience
 %  {<End date>}      {<Consultant title>}{<Consulting Enterprise>}{<Country>}
 %  {<Start date}     {<Client title>}{<Client business unit>}
@@ -464,19 +452,8 @@
     \begin{tabular}{>{}l >{}l}
       \multicolumn{2}{l}{\textbf{#1}}\\
       \multicolumn{2}{l}{\emph{#2}, \textsc{#3}}\\
-      \quad \mailSymbol & \href{mailto:#4}{#4} \\
+      \quad \mailSymbol & \href{mailto:#4}{#4} \\  
       \quad \faPhone & #5 \\
-    \end{tabular}
-  \end{minipage}%
-  }
-
-\newcommand*\refereeMailOnly[4]{
-  \hspace{1em}
-  \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
-    \begin{tabular}{>{}l >{}l}
-      \multicolumn{2}{l}{\textbf{#1}}\\
-      \multicolumn{2}{l}{\emph{#2}, \textsc{#3}}\\
-      \quad \mailSymbol & \href{mailto:#4}{#4} \\
     \end{tabular}
   \end{minipage}%
 }

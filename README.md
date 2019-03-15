@@ -1,17 +1,9 @@
-YAAC: Another Awesome CV [![CircleCI](https://circleci.com/gh/darwiin/yaac-another-awesome-cv.svg?style=svg)](https://circleci.com/gh/darwiin/yaac-another-awesome-cv) [![Example](https://img.shields.io/badge/Exemple-pdf-blue.svg)](https://github.com/darwiin/yaac-another-awesome-cv/releases/download/v1.8.0/cv.pdf)
+Awesome Source CV [![Example](https://img.shields.io/badge/Exemple-pdf-blue.svg)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf)
 =================
-
-## Quick start
-
-You can edit online **YAAC: Another Awesome CV** template on [Overleaf](https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw). Feel free to use my [referal link](https://www.overleaf.com/signup?ref=54c221604cd6) if you want to create your account.
 
 ## About
 
-**YAAC: Another Awesome CV** was first based on a CV template from Alessandro Plasmati. This template used _XeLaTeX_ engine and _[Fontin Sans](http://www.exljbris.com/fontinsans.html)_ font. 
-
-**Personal data** has moved on top of the first page just before the position and _[Fontin Sans](http://www.exljbris.com/fontinsans.html)_ font has been replaced by _[Source Sans Pro Font](https://github.com/adobe-fonts/source-sans-pro)_ from Adobe. _[Font Awesome](http://fontawesome.io/)_ icons highlight important elements.
-
-Unlike _Alessandro Plasmati_ CV template, all layout stuff in **YAAC: Another Awesome CV** has moved in the Latex class file _yaac-another-awesome-cv.cls_ to improve source code readability and style reusability.
+**Awesome Source Latex CV** is based on a CV template created by Alessandro Plasmati. The original template use _XeLaTeX_ engine and _[Fontin Sans](http://www.exljbris.com/fontinsans.html)_ font. 
 
 More informations about the original Alessandro Plasmati template can be found here :
 
@@ -19,40 +11,15 @@ More informations about the original Alessandro Plasmati template can be found h
    -  [ LaTeX Templates ](http://www.latextemplates.com/template/plasmati-graduate-cv)
    -  [ ShareLatex ](https://www.sharelatex.com/templates/cv-or-resume/professional-cv)
 
-## Preview
+**Personal data** has moved on top of the first page just before the position and _[Fontin Sans](http://www.exljbris.com/fontinsans.html)_ font has been replaced by _[Source Sans Pro Font](https://github.com/adobe-fonts/source-sans-pro)_ from Adobe. _[Font Awesome](http://fontawesome.io/)_ icons are used to highlight important elements.
 
-### Normal style
+Unlike _Alessandro Plasmati_ CV template, all layout stuff in **Awesome Source Latex CV** has moved in the Latex class file _awesome-source-cv.cls_.
 
-| Page. 1 | Page. 2 |
-|:---:|:---:|
-| ![Résumé](example/preview/cv1.jpeg) | ![Résumé](example/preview/cv2.jpeg) |
+## Quick start
 
-### Alternative style
+You can edit online **Awesome Source Latex CV** on [Overleaf](https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw). Feel free to use my [referal link](https://www.overleaf.com/signup?ref=54c221604cd6) if you want to create your account.
 
-| Page. 1 | Page. 2 |
-|:---:|:---:|
-| ![Résumé](example/preview/cv1-alternative.jpeg) | ![Résumé](example/preview/cv2-alternative.jpeg) |
-
-## How to use **YAAC: Another Awesome CV** latex class
-
-### Use the **YAAC: Another Awesome CV** options
-
-When declaring the `\documentclass` you can use option(s) to customize your CV rendering.
-
-```latex
-% Used with no option, the template will use the 'traditional' 
-% header layout your system fonts and the default color scheme ie. blue
-\documentclass{yaac-another-awesome-cv}
-
-% Used with localFont option the template will use the 'traditional' 
-% header layout, fonts included in the fonts directory and the default color scheme
-\documentclass[localFont]{yaac-another-awesome-cv}
-
-% Used with localFont option, the template will use the 'alternative' 
-% header layout, your system fonts and the default color scheme
-\documentclass[alternative]{yaac-another-awesome-cv}
-
-```
+## How to use **Awesome Source CV** latex class
 
 ### Construct the header
 
@@ -104,7 +71,7 @@ Put these command in the `\socialinfo` wrapper. Feel free to add `\\` when you w
   \smartphone{+687 123 456}
   \email{christophe.roger@mail.com}\\
   \address{2 Rue du quartier, 98765 Ville, Pays}\\
-  \infos{Né le 23 septembre 1982 (35 ans) à Nouméa, Nouvelle-Calédonie}
+  \infos{Né le 23 septembre 1982 (34 ans) à Nouméa, Nouvelle-Calédonie}
 }
 ```
 
@@ -112,19 +79,6 @@ Use the `\makecvheader`command to generate the header.
 
 ```latex
 \makecvheader
-```
-
-### Construct the _comptences_ or _skills_ section
-
-To list your awesome skills as keyword lists you first have to declare the `keywords` environment and then fill it with a list of keywordsentry
-
-```latex
-% Begin a new keywords environment to show us your awesome keywords
-  \begin{keywords}
-    
-    % Here's go your keyword lists group by categories
-    \keywordsentry{Frameworks}{Spring, Spring Boot, \textbf{Ionic 3}, Angular 2, Angular 4, ZK, JBoss RichFaces}
-  \end{keywords}
 ```
 
 ### Construct the _experiences_ section
@@ -180,90 +134,8 @@ entry must be separated by the **\emptyseparator**
 \end{experiences}
 ```
 
-### Construct the _languages_ section
-
-The _languages_ section use the **skills** environment. 
-
-```latex
-% Begin a new skills environment and fill it with skill entries
-  \begin{skills}
-
-% Render a skill in the skills environment
-% Usage: \skill{<skill>}{<level between 1 and 5>}
-    \skill{Français}{5}
-    \skill{Anglais}{4}
-
-% End the skills environment    
-  \end{skills}
-```
-
-### Construct the _scolarship_ section
-
-The _scolarship_ section use the **scolarship** environment.
-
-```latex
-\begin{scholarship}
-
-  % Render a scholarshipentry in the scolarship environment
-  % Usage: \scholarshipentry{<date>}{<description>}
-  \scholarshipentry{2007}
-    {Master STIC Professionel filière MBDS de l'Université de Nice Sophia Antipolis (Master Informatique spécialité Multimédia, Base de Données et intégration de Systèmes)}
-  \scholarshipentry{2005}
-    {Licence Sciences et Technologies, Mention Informatique, de l'Université de Nouvelle-Calédonie}
-\end{scholarship}
-```
-
-### Construct the _projects_ section
-
-The _projects_ section use the **projects** environment.
-
-```latex
-\begin{projects}
-  \project
-    {Simply City}{2017 - 2018}
-    {\website{https://www.simplycity.nc}{https://www.simplycity.nc} \website{https://innovation.engie.com/fr/news/actus/territoires/simply-city-lappli-qui-simplifie-la-ville-au-ces-2018-avec-engie/8156}{Présentation CES 2018} }
-    {Simply City est une application mobile, gratuite et participative destinée à tous les habitants, visiteurs et touristes qui séjournent dans une ville. L’application permet de connaître toutes les informations et services utiles en temps réel.}
-    {Ionic 3,Typescript,Javascript,Visual Studio Code}
-        
-\end{projects}
-```
-
-### Construct the _references_ section
-
-The _references_ section use the **references** environment.
-
-```latex
-  \begin{references}
-
-    % Here's go your references
-
-  \end{references}
-```
-
-Then you can list your references as follow:
-
-```latex
-  \begin{referees}
-    \referee
-      {John Snow}
-      {Lord Commander of the Night Watch}
-      {Night Watch}
-      {john.snow@nightwatch.org}
-      {+687 987 654}
-
-    \referee
-      {Géry Loutre}
-      {Architecte logiciel}
-      {Cafat}
-      {ref1@cafat.nc}
-      {+687 987 654}
-
-  \begin{referees}
-```
-
-
 ## License
 
-Latex class file _yaac-another-awesome-cv_ is published under the term of the [LPPL Version 1.3c](https://www.latex-project.org/lppl.txt).
+Latex class file _awesome-source-cv.cls_ is published under the term of the [LPPL Version 1.3c](https://www.latex-project.org/lppl.txt).
 
 All content files are published under the term of the [CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
