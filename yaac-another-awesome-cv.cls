@@ -122,7 +122,7 @@
 %\fancyfoot[C]{\thepage}
 \pagestyle{fancy}
 
-%\pagestyle{empty}                         % non-numbered pages
+\pagestyle{empty}                         % non-numbered pages
 %\font\fb=''[cmr10]''                      % for use with \LaTeX command
 
 % Setup CV sections
